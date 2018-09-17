@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      <script src="js/jquery.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+      
+      
+    <title>Budget App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+      <style>
+          *{
+              overflow-x: hidden;
+          }
+          .footer {
+                height: 22px;
+                left: 0;
+                bottom: 0;
+                position: fixed;
+                width: 100%;
+                color: white;
+                text-align: center;
+            }
+      </style>
+  </head>
+
+  <body>
+      
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="width: 100%;">
+      <div class="container" >
+        <a class="navbar-brand" href="#"> Welcome ! </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html">Settings</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statements.html">Statement</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--      Login Page-->
+    <div class="container" style="width: 95%; margin: 0 auto; margin-top: 3%;" id="loginNo" >
+              <div class="form-group">
+                  <h3 style="overflow: hidden">Login Below if you have an existing account or click on Sign Up</h3>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Eg: dileshtanna">
+              </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+              </div>
+          <button type="submit" class="btn btn-success" onClick="login()">Submit</button> <button type="submit" class="btn btn-primary" onClick="showSignUp()">Sign Up</button>
+      </div>
+      
+      <!--      Login Page Ends-->
+      
+      <!--      SignUp Page-->
+    <div class="container" style="width: 95%; margin: 0 auto; margin-top: 3%; display: none;" id="signUp" >
+              <div class="form-group">
+                  <h3 style="overflow: hidden">Choose a username and password</h3>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="usernameSignUp" placeholder="Eg: dileshtanna">
+              </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="passwordSignUp" placeholder="Enter your password">
+              </div>
+          <button type="submit" class="btn btn-success" onClick="signUp()">Submit</button> <button type="submit" class="btn btn-primary" onClick="showLogin()"> Login</button>
+      </div>
+      
+      <!--      SignUp Page Ends-->
+      <div class="footer navbar-dark bg-dark" style="10px;">
+                      
+                    </div>
+        
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+     
+       
+
+  </body>
+
+</html>

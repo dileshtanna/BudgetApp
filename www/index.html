@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      <script src="js/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+      
+      <script>
+          
+               
+        $(document).ready(function() {
+            if ("loggedIn" in localStorage) {
+                
+                }
+        else{
+            
+            window.location = "loginSignUp.html";
+        }
+            
+            $('#mopB').hide();
+            $('#mopBL').hide();
+
+             $('#mop').change(function () {
+                if ($('#mop option:selected').text() == "Bank"){
+                    $('#mopB').show();
+                    $('#mopBL').show();
+                }
+                 else { 
+                      $('#mopB').hide();
+                     $('#mopBL').hide();
+                 }
+            });
+            
+        });
+      
+      </script>
+      
+    <title>Budget App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+      <style>
+          *{
+              overflow-x: hidden;
+          }
+          .footer {
+                height: 22px;
+                left: 0;
+                bottom: 0;
+                position: fixed;
+                width: 100%;
+                color: white;
+                text-align: center;
+            }
+      </style>
+  </head>
+
+  <body>
+      
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="width: 100%;">
+      <div class="container" >
+        <a class="navbar-brand" href="#"> Welcome ! </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html">Settings</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statements.html">Statement</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+      
+    <!-- Page Content -->
+        <div class="container" style="width: 95%; margin: 0 auto; margin-top: 3%; " id="loginYes" >
+<!--            <div class="row">-->
+                <div class="d-flex justify-content-center">
+                    <label style="padding: 15px 15px 15px 15px; border: 2px solid #ff4d4d; margin-top: 5px; color: #47d147; font-size: 17px;"> Bank: <span style="color: #3498DB; font-size: 18px;" id="bank">&#8377; </span></label><span style="width: 4px; margin-left: 10px;"></span><label style="margin-top: 5px; padding: 15px 15px 15px 15px; border: 2px solid #47d147
+; color: #ff4d4d; fon t-size: 17px;"> Cash: <span style="color: #3498DB; font-size: 18px;" id="cash">&#8377; </span></label>
+                </div>
+            
+             <div class="col-lg-12 text-center table-responsive" style="margin-top: 5%;">
+                    <label style="margin-top: 10px; font-size: 24px;"> Last Purchase</label>
+                        <table class="table">
+                            <thead><tr><th>Date</th><th>Product</th><th>Cost</th><th>MOP</th><th>MOBP</th><th>Comments</th></tr></thead>
+                            <tbody id="tableData"></tbody>
+                        </table>
+                    
+                </div>
+                    <button type="button" class="btn btn-outline-primary" style="display: block; margin-left: auto; margin-right: auto; width: 150px; height: 150px; border-radius: 200px; margin-top: 4%" data-toggle="modal" data-target="#myModal">ADD</button>
+                    
+<!--                    Modal for form-->
+                    <div class="modal" id="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">Enter your purchase information below</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                  
+                                      <div class="form-group ">
+                                        <label for="date">Date</label>
+                                        <input type="date" class="form-control" id="date" aria-describedby="date" placeholder=" Select Date" required >
+
+                                        <label for="product">Product</label>
+                                        <input type="text" class="form-control" id="product" placeholder="Product" required>
+
+                                        <label for="prodcostuct">Cost</label>
+                                        <input type="number" class="form-control" id="cost" placeholder="Cost Of Product" required>
+
+                                        <label for="mop">Mode Of Payment</label>
+                                                <select class="form-control" id="mop">
+                                                <option value="1">Cash</option>
+                                                <option value="2">Bank</option>
+                                              </select>
+                                          <label for="mopB" id="mopBL">Mode Of Bank Payment</label>
+                                                <select class="form-control" id="mopB">
+                                                <option value="0" hidden selected>NA</option>  
+                                                
+
+                                              </select>
+                                          <label for="comments">Comments</label>
+                                        <textarea class="form-control" id="comments" rows="3" required ></textarea>
+                                      </div>
+
+                                    <button type="submit" class="btn btn-primary" id="submitData" >Submit</button>
+                              </div>
+
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    
+            </div>
+                  <div class="footer navbar-dark bg-dark" style="10px;">
+                      
+                    </div>
+        
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+     
+       
+
+  </body>
+
+</html>
